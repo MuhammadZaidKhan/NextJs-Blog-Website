@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+export const revalidate = 30; //refresh after 30 sec for new data to be pushed from sanity
+
 async function getData() {
   const query = `*[_type == 'blog'] | order(_createdAt desc)
 {

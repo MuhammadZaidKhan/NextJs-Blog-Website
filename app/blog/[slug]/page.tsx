@@ -2,6 +2,8 @@ import { fullBlog } from "@/app/lib/interface";
 import { client, urlFor } from "@/app/lib/sanity";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
+
+export const revalidate = 30; //refresh after 30 sec for new data to be pushed from sanity
 async function getData(slug: string) {
   const query = `*[_type == 'blog' && slug.current == '${slug}']
 {
